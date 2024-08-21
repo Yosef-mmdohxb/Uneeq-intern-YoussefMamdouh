@@ -1,0 +1,11 @@
+nmap -sn 192.168.18.0/24   
+nmap -sS -sV -O --script vuln -oN assessment.txt 192.168.18.44/24    
+
+
+# First command I am just doing scan on the network on a given subnet (-sn) to lock in the target
+
+# In second command I am doing 4 scans 
+# 1) first is -sS that is the Syn scans to check for the open ports , You can see that my private network is 192.168.18.0/24                                                                     
+# 2) second is -sV that is the version scan to identify the version of the service on each port                                                                   
+# 3) third is -O to check for the OS version                                                                   
+# 4) fourth is --script vuln that checks for any vulnerabilites using the built-in nmap scripts and gives an assessment for each one
